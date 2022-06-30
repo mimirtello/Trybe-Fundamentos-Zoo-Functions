@@ -12,7 +12,9 @@ function calculateEntry(entrants) {
   if (!entrants || Object.entries(entrants).length === 0) {
     return 0;
   }
-  return Object.keys(prices).reduce((acc, curr) => acc + (prices[curr] * countEntrants(entrants)[curr]), 0);
+  const precos = Object.keys(prices);
+  const contagem = countEntrants(entrants);
+  return precos.reduce((acc, curr) => acc + (prices[curr] * contagem[curr]), 0);
 }
 
 module.exports = { calculateEntry, countEntrants };
