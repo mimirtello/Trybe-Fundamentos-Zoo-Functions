@@ -1,13 +1,9 @@
 const getOpeningHours = require('../src/getOpeningHours');
-
 const validateHour = require('../src/getOpeningHours');
 const validateDay = require('../src/getOpeningHours');
-
 const { hours } = require('../data/zoo_data');
 const validateAbbreviation = require('../src/getOpeningHours');
 const isStringRepresentNumber = require('../src/getOpeningHours');
-
-const openOrClosed = require('../src/getOpeningHours');
 
 describe('Testes da função getOpeningHours', () => {
   it('Passando AM e PM', () => {
@@ -58,6 +54,4 @@ describe('Testes da função getOpeningHours', () => {
   it('Message zoo1', () => {
     expect(getOpeningHours('Monday', '10:00-PM')).toEqual('The zoo is closed');
   });
- 
-
 });
